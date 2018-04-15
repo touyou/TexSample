@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import iosMath
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var sampleLabel: MTMathUILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        sampleLabel.latex = "x = \\int\\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}"
     }
 
     override func didReceiveMemoryWarning() {

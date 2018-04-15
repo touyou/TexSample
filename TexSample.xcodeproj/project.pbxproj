@@ -12,6 +12,7 @@
 		4688D3CF2083047D00E3316F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4688D3CD2083047D00E3316F /* Main.storyboard */; };
 		4688D3D12083047D00E3316F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4688D3D02083047D00E3316F /* Assets.xcassets */; };
 		4688D3D42083047D00E3316F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4688D3D22083047D00E3316F /* LaunchScreen.storyboard */; };
+		F183A8FC4D8CF7A0898746A8 /* Pods_TexSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE85180B60EF783BE7A918F0 /* Pods_TexSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		4688D3D02083047D00E3316F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4688D3D32083047D00E3316F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4688D3D52083047E00E3316F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1796551078606BB62C5D627 /* Pods-TexSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TexSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TexSample/Pods-TexSample.debug.xcconfig"; sourceTree = "<group>"; };
+		FCFC622106661E4F3AD3D6D4 /* Pods-TexSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TexSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TexSample/Pods-TexSample.release.xcconfig"; sourceTree = "<group>"; };
+		FE85180B60EF783BE7A918F0 /* Pods_TexSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TexSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F183A8FC4D8CF7A0898746A8 /* Pods_TexSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				4688D3C82083047D00E3316F /* TexSample */,
 				4688D3C72083047D00E3316F /* Products */,
+				D26E90F4AA532664690FED12 /* Pods */,
+				5D5372EDF8AF7CB2EFFAC380 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = TexSample;
 			sourceTree = "<group>";
 		};
+		5D5372EDF8AF7CB2EFFAC380 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE85180B60EF783BE7A918F0 /* Pods_TexSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D26E90F4AA532664690FED12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1796551078606BB62C5D627 /* Pods-TexSample.debug.xcconfig */,
+				FCFC622106661E4F3AD3D6D4 /* Pods-TexSample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4688D3D82083047E00E3316F /* Build configuration list for PBXNativeTarget "TexSample" */;
 			buildPhases = (
+				0C941CCB4D9CEBD526581FDB /* [CP] Check Pods Manifest.lock */,
 				4688D3C22083047D00E3316F /* Sources */,
 				4688D3C32083047D00E3316F /* Frameworks */,
 				4688D3C42083047D00E3316F /* Resources */,
+				7BABAD60BCB67142EC1F9665 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C941CCB4D9CEBD526581FDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TexSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BABAD60BCB67142EC1F9665 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TexSample/Pods-TexSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosMath.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TexSample/Pods-TexSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4688D3C22083047D00E3316F /* Sources */ = {
@@ -278,15 +343,13 @@
 		};
 		4688D3D92083047E00E3316F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1796551078606BB62C5D627 /* Pods-TexSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = TexSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.TexSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +359,13 @@
 		};
 		4688D3DA2083047E00E3316F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCFC622106661E4F3AD3D6D4 /* Pods-TexSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				INFOPLIST_FILE = TexSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.touyou.TexSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
